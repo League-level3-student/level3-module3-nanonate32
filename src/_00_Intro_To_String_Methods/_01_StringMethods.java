@@ -80,17 +80,30 @@ public class _01_StringMethods {
                       arr3[ k+1 ] = temp;
                   }
                   
+                  
               }
           }
-        return null;
+        if(arr3[0].equals(words[1])){
+        	name = words[0];
+        }
+        if(arr3[0].equals(words2[1])) {
+        	name = words2[0];
+        }
+        if(arr3[0].equals)
+        return name;
     }
 
     // Return the sum of all numerical digits in the String
     public static int numeralSum(String s) {
     	int sum = 0;
+    	int additionalNum = 0;
+    	String man;
     	for(int i = 0; i < s.length(); i++) {
        if(Character.isDigit(s.charAt(i))) {
-    	 sum =   Character.getNumericValue(i);
+    	   man = "" + s.charAt(i);
+    	    additionalNum = Integer.parseInt(man);
+    	    sum += additionalNum;
+    	 
        }
        char character = s.charAt(i);
        System.out.println(character);

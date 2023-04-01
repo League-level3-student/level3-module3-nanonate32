@@ -89,7 +89,9 @@ public class _01_StringMethods {
         if(arr3[0].equals(words2[1])) {
         	name = words2[0];
         }
-        if(arr3[0].equals)
+        if(arr3[0].equals(words3[1])) {
+        	name = words3[0];
+        }
         return name;
     }
 

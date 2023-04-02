@@ -1,5 +1,6 @@
 package _00_Intro_To_String_Methods;
 
+import java.io.UnsupportedEncodingException;
 import java.util.Base64;
 
 /*
@@ -64,9 +65,10 @@ public class _01_StringMethods {
     	System.out.println(s2);
     	System.out.println(s3);
     	String name = null;
-    	String[] words = s1.split(" ");
-    	String[] words2 = s2.split(" ");
-    	String[] words3 = s3.split(" ");
+    			
+    	String[] words = s1.trim().split(" ");
+    	String[] words2 = s2.trim().split(" ");
+    	String[] words3 = s3.trim().split(" ");
     	String[] arr3 = {words[1],words2[1],words3[1]};
     	  for (int i = 0; i < arr3.length; i++) {
               for (int k = 0; k < arr3.length - 1; k++) {
@@ -78,20 +80,22 @@ public class _01_StringMethods {
                       String temp = arr3[k];
                       arr3[k] = arr3[ k+1 ];
                       arr3[ k+1 ] = temp;
+                      
                   }
                   
                   
               }
           }
         if(arr3[0].equals(words[1])){
-        	name = words[0];
+        	name = words[0] + " " + words[1];
         }
         if(arr3[0].equals(words2[1])) {
-        	name = words2[0];
+        	name = words2[0] + " " + words2[1];
         }
         if(arr3[0].equals(words3[1])) {
-        	name = words3[0];
+        	name = words3[0] + " " + words3[1];
         }
+        System.out.println(name);
         return name;
     }
 
@@ -119,13 +123,33 @@ public class _01_StringMethods {
 
     // Call Utilities.encrypt at the bottom of this file to encrypt String s
     public static String encrypt(String s, char key) {
-        return null;
+    	
+    	byte[] strybytes = null;
+	
+			strybytes = s.getBytes();
+		 
+			
+			
+		
+    	
+    	
+        return Utilities.encrypt(strybytes, (byte) key);
     }
 
     // Call Utilities.decrypt at the bottom of this file to decrypt the
     // cyphertext (encrypted text)
     public static String decrypt(String s, char key) {
-        return null;
+    	byte[] strybytes = null;
+    	
+		strybytes = s.getBytes();
+	 
+		
+		
+	
+	
+	
+    return Utilities.decrypt(s, (byte) key);
+        
     }
 
     // Return the number of words in String s that end with String substring

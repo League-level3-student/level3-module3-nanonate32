@@ -1,7 +1,10 @@
 package _00_Intro_To_String_Methods;
 
 import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Base64;
+import java.util.List;
 
 /*
  * Visit the JavaDocs for the String class to view everything you can do with a String.
@@ -118,7 +121,14 @@ public class _01_StringMethods {
     }
     // Return the number of times String substring appears in String s
     public static int substringCount(String s, String substring) {
-        return 0;
+        int index;
+    	int numOccurances = 0;
+    	index = s.indexOf(substring);
+    	while(index != -1) {
+    		numOccurances++;
+    		index = s.indexOf(substring, index + substring.length());
+    	}
+    	        return numOccurances;
     }
 
     // Call Utilities.encrypt at the bottom of this file to encrypt String s
@@ -155,7 +165,22 @@ public class _01_StringMethods {
     // Return the number of words in String s that end with String substring
     // You can assume there are no punctuation marks between words
     public static int wordsEndsWithSubstring(String s, String substring) {
-        return 0;
+    	
+    	String[] strings = s.split(" ");
+    	int index;
+    	int numOccurances = 0;
+    	index = s.indexOf(substring);
+    	while(index != -1 ) {
+    		
+    		index = s.indexOf(substring, index + substring.length());
+    	}
+    	for (int i = 0; i < strings.length; i++) {
+			if(strings[i].endsWith(substring)) {
+				numOccurances++;
+			}
+		}
+    	        return numOccurances;	
+        
     }
 
     // Given String s, return the number of characters between the first

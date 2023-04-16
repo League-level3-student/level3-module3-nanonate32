@@ -187,6 +187,8 @@ public class _01_StringMethods {
     // occurrence of String substring and the final occurrence
     // You can assume that substring will appear at least twice
     public static int distance(String s, String substring) {
+    	
+    	
         return 0;
     }
 
@@ -194,7 +196,30 @@ public class _01_StringMethods {
     // palindromes are words or phrases are read the same forward as backward.
     // HINT: ignore/remove all punctuation and spaces in the String
     public static boolean palindrome(String s) {
-        return true;
+    	char question = '?';
+    	char period = '.';
+    	char comma = ',';
+    	char colon = ':';
+    	char dash = '-';
+    s =	s.replace(question, ' ');
+    s =	s.replace(period,  ' ');
+    s =	s.replace(comma,  ' ');
+    s =	s.replace(colon,  ' ');
+    s =	s.replace(dash, ' ');
+    	char[] chars = s.trim().toLowerCase().toCharArray();
+    	for (int i = 0; i < chars.length; i++) {
+    	     
+    	    	 if(chars[0 + i] == chars[chars.length-1 - i]) {
+    	    		 
+    	    		 return true;
+    	    	 }
+    	     
+    	}
+			
+		
+    	
+    	
+        return false;
     }
 }
 

@@ -187,19 +187,14 @@ public class _01_StringMethods {
     // occurrence of String substring and the final occurrence
     // You can assume that substring will appear at least twice
     public static int distance(String s, String substring) {
-    	int dist = 0;
+    	
      	
-     	String firstSub;
-     	String lastSub;
-     	boolean isInitialized;
-     	for (int i = 0; i < s.length(); i++) {
-			
-		firstSub =	s.substring(i, i +substring.length()-1);
-		if(firstSub!=)
-		}
+     	int firstSub = s.indexOf(substring);
+     	int lastSub = s.lastIndexOf(substring);
      	
      	
-        return 0;
+     	
+        return lastSub - firstSub - substring.length();
     }
     
     // Return true if String s is a palindrome

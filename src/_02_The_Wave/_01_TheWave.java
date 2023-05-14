@@ -21,11 +21,19 @@ public class _01_TheWave {
     
     public static ArrayList<String> wave(String str) {
     	ArrayList<String> strings = new ArrayList<String>();
-    	StringBuilder 
+    	//StringBuilder builder = new StringBuilder();
         for(int i =0; i<str.length(); i++) {
+        	if(str.charAt(i) != ' ') {
         char strUpper =	Character.toUpperCase(str.charAt(i));
+        String s = str.substring(0,i) + strUpper + str.substring(i+1, str.length());
+       // String string1 =  builder.toString();
         
+        
+      
+      strings.add(s);
+      
+        	}
         }
-        return null;
+        return strings;
     }
 }
